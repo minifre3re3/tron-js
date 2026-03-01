@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tron — Projet2025</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <h1>Tron — Projet2025</h1>
+
+    <section id="ui-top" aria-label="Scores">
+      <div id="scoreboard" aria-live="polite">
+        <span id="score1" class="score-p1">Bleu: 0</span>
+        <span id="score2" class="score-p2">Rouge: 0</span>
+      </div>
+    </section>
+
+    <section id="instructions" aria-label="Instructions">
+      <h2>Règles</h2>
+      <ul>
+        <li><strong>Joueur 1 (Bleu)</strong> : Touches Q, W, D, Z (Dir) + Espace (Saut).</li>
+        <li><strong>Joueur 2 (Rouge)</strong> : Touches O, K, ;, M (Dir) + Entrée (Saut).</li>
+        <li><strong>Saut</strong> : Permet de franchir 1 obstacle (mur ou ruban).</li>
+        <li><strong>Victoire</strong> : Premier à 3 manches gagnantes.</li>
+      </ul>
+    </section>
+
+    <div class="canvas-container">
+      <canvas id="gameCanvas" width="800" height="590" role="img" aria-label="Aire de jeu Tron"></canvas>
+      <div id="message" aria-live="assertive"></div>
+    </div>
+
+    <section id="controls-bottom">
+      <button id="btnStart">Démarrer Partie</button>
+      <button id="btnConfig">Configurer les touches</button>
+      <button id="btnReset">Réinitialiser scores</button>
+    </section>
+
+    <dialog id="configDialog" aria-label="Configuration des touches">
+      <form method="dialog" id="keyForm">
+        <h2>Configurer les touches</h2>
+        <fieldset>
+          <legend>Joueur 1 (Bleu)</legend>
+          <label>Gauche (Q) <input id="p1_left" name="p1_left" maxlength="1"></label>
+          <label>Bas (W)   <input id="p1_down" name="p1_down" maxlength="1"></label>
+          <label>Droite (D)<input id="p1_right" name="p1_right" maxlength="1"></label>
+          <label>Haut (Z)  <input id="p1_up" name="p1_up" maxlength="1"></label>
+          <label>Saut      <input id="p1_jump" name="p1_jump" maxlength="5"></label>
+        </fieldset>
+        <fieldset>
+          <legend>Joueur 2 (Rouge)</legend>
+          <label>Gauche (O) <input id="p2_left" name="p2_left" maxlength="1"></label>
+          <label>Bas (K)    <input id="p2_down" name="p2_down" maxlength="1"></label>
+          <label>Droite (;) <input id="p2_right" name="p2_right" maxlength="1"></label>
+          <label>Haut (M)   <input id="p2_up" name="p2_up" maxlength="1"></label>
+          <label>Saut       <input id="p2_jump" name="p2_jump" maxlength="5"></label>
+        </fieldset>
+        <menu>
+          <button id="saveConfig">Valider</button>
+          <button id="cancelConfig" type="reset">Annuler</button>
+        </menu>
+      </form>
+    </dialog>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
